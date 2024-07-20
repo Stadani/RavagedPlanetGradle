@@ -1,25 +1,34 @@
 package org.example;
 
 import environment.Location;
+import environment.Map;
 
 public class Player {
-    private final String symbol = "+";
+    private final char symbol = '+';
     private PlayerRole playerRole;
     private Location currentLocation;
+    Map map;
 
-    public Player(PlayerRole playerRole) {
+    public Player(PlayerRole playerRole, Map map) {
         this.playerRole = playerRole;
+        this.map = map;
     }
 
-    public void movePlayer(Location newLocation) {
-//        if ()
+    public void movePlayer(String location) {
+        Location moveTo = map.getLocationByName(location);
+        if (map.isAdjacent(currentLocation, moveTo)) {
+            setCurrentLocation(moveTo);
+            System.out.println("Player moved to " + location);
+        } else {
+            System.out.println("You can't move to " + location);
+        }
     }
 
     public PlayerRole getPlayerRole() {
         return playerRole;
     }
 
-    public String getSymbol() {
+    public char getSymbol() {
         return symbol;
     }
 
@@ -27,8 +36,8 @@ public class Player {
         return currentLocation;
     }
 
-    public void setCurrentLocation(Location currentLocation) {
-        this.currentLocation = currentLocation;
+    public void setCurrentLocation(Location newLocation) {
+        this.currentLocation = newLocation;
     }
 }
 

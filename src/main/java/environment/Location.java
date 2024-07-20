@@ -2,32 +2,27 @@ package environment;
 
 public class Location {
     private String name;
-    private String[][] map;
+    private char[][] area;
 
-    public Location(String name) {
+    public Location(String name, char[][] area) {
         this.name = name;
-        this.map = new String[8][8];
-        for (int i = 0; i < this.map.length; i++) {
-            for (int j = 0; j < this.map[0].length; j++) {
-                this.map[i][j] = "□";
-            }
-        }
+        this.area = area;
     }
 
     public void printLocation() {
-        for (int i = 0; i < this.map.length; i++) {
-            for (int j = 0; j < this.map[0].length; j++) {
-                System.out.print(this.map[i][j]);
+        for (int i = 0; i < this.area.length; i++) {
+            for (int j = 0; j < this.area[0].length; j++) {
+                System.out.print(this.area[i][j]);
                 System.out.print(" ");
-                if (j == this.map[0].length - 1) {
+                if (j == this.area[0].length - 1) {
                     System.out.println();
                 }
             }
         }
     }
 
-    public void placeObjectInLocation(int x, int y, String symbol) {
-        this.map[x][y] = symbol;
+    public void placeObjectInLocation(int x, int y, char symbol) {
+        this.area[x][y] = symbol;
     }
 
     public String getName() {
