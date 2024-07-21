@@ -9,15 +9,15 @@ public class Location {
         this.area = area;
     }
 
+    /**
+     * prints the area of location
+     */
     public void printLocation() {
-        for (int i = 0; i < this.area.length; i++) {
-            for (int j = 0; j < this.area[0].length; j++) {
-                System.out.print(this.area[i][j]);
-                System.out.print(" ");
-                if (j == this.area[0].length - 1) {
-                    System.out.println();
-                }
+        for (char[] row : area) {
+            for (char cell : row) {
+                System.out.print(cell);
             }
+            System.out.println();
         }
     }
 

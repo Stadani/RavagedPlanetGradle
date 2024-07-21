@@ -1,4 +1,5 @@
-import environment.Map;
+import environment.Location;
+import environment.WorldMap;
 import input.LoadLocationFromFile;
 import input.LoadMapFromFile;
 import org.junit.jupiter.api.Test;
@@ -6,10 +7,12 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 
 public class FileLoadingTest {
-    @Test
-    public void test() {
-        Map map = new Map();
-        LoadMapFromFile loadMap = new LoadMapFromFile(map);
+    private WorldMap worldMap;
+
+
+    public FileLoadingTest() {
+        this.worldMap = new WorldMap();
+        LoadMapFromFile loadMap = new LoadMapFromFile(worldMap);
         LoadLocationFromFile locationLoad = new LoadLocationFromFile();
 
         try {
@@ -17,8 +20,24 @@ public class FileLoadingTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
 
-//        map.printWorldMap();
-        map.printAdjacentLocation(map.getLocationByName("Town"));
+    @Test
+    public void printWorldMap() {
+        System.out.println("Printing World Map:");
+        worldMap.printWorldMap();
+    }
+
+    @Test
+    public void printConnectionsBetweenLocations() {
+        System.out.println("Printing Connections Between Locations:");
+        this.worldMap.printListOfLocationsConnectedToKey();
+    }
+
+    @Test
+    public void printAdjacentLocations() {
+        System.out.println("Printing Adjacent Locations to Town:");
+        Location location = this.worldMap.getLocationByName("Town");
+        this.worldMap.printAdjacentLocations(location);
     }
 }

@@ -1,7 +1,7 @@
 package org.example;
 
 import environment.Location;
-import environment.Map;
+import environment.WorldMap;
 import input.LoadLocationFromFile;
 import input.LoadMapFromFile;
 
@@ -9,8 +9,8 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
-        Map map = new Map();
-        Player player = new Player(PlayerRole.KNIGHT, map);
+        WorldMap worldMap = new WorldMap();
+        Player player = new Player(PlayerRole.KNIGHT, worldMap);
         Location location;
 
 
@@ -44,7 +44,7 @@ public class Main {
 //            e.printStackTrace();
 //        }
 
-        LoadMapFromFile loadMap = new LoadMapFromFile(map);
+        LoadMapFromFile loadMap = new LoadMapFromFile(worldMap);
         LoadLocationFromFile locationLoad = new LoadLocationFromFile();
         try {
             loadMap.loadConnectionsFromFile("maps/defaultMap.txt", locationLoad);
@@ -52,13 +52,14 @@ public class Main {
             e.printStackTrace();
         }
 
-        map.printWorldMap();
+        worldMap.printWorldMap();
         System.out.println("");
-        if (map.isAdjacent(map.getLocationByName("Town"), map.getLocationByName("Dungeon"))){
+        if (worldMap.isAdjacent(worldMap.getLocationByName("Town"), worldMap.getLocationByName("Dungeon"))){
             System.out.println("Adjacent");
         }
 
-        map.printAdjacentLocation(map.getLocationByName("Town"));
-
+        worldMap.printAdjacentLocations(worldMap.getLocationByName("Town"));
+        Location town = worldMap.getLocationByName("Town");
+        town.printLocation();
     }
 }

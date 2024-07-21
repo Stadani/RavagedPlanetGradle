@@ -7,6 +7,15 @@ import java.io.*;
 
 public class LoadLocationFromFile {
 
+    /**
+     * Loads resource file based on the name.
+     * Reads a file and stores the first line as the name of location.
+     * After first line it reads the rest and uses StringBuilder.
+     * StringBuilder is then split into lines of String and converted into array of chars
+     * @param file name of the file
+     * @return Location object
+     * @throws IOException
+     */
     public Location loadLocationFromFile(String file) throws IOException {
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream(file);
         if (inputStream == null) {
