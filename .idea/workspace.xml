@@ -4,15 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22b25441-a7c5-4e22-b15d-6e8ac69c6c81" name="Changes" comment="map loading from file">
+    <list default="true" id="22b25441-a7c5-4e22-b15d-6e8ac69c6c81" name="Changes" comment="comments and jagged array handling">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/environment/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/environment/Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/environment/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/environment/WorldMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/input/LoadLocationFromFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/input/LoadLocationFromFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/input/LoadMapFromFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/input/LoadMapFromFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/environment/WorldMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/environment/WorldMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/locations/town.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/locations/town.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/player/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PlayerRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/player/PlayerRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/locations/dungeon.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/locations/dungeon.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/FileLoadingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FileLoadingTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,6 +47,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Enum" />
         <option value="Class" />
       </list>
@@ -79,31 +79,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.FileLoadingTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.FileLoadingTest.printAdjacentLocations.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.FileLoadingTest.printConnectionsBetweenLocations.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.FileLoadingTest.printWorldMap.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.FileLoadingTest.test.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.RavagedPlanetGradle [:Main.main()].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/xxthe/IdeaProjects/RavagedPlanetGradle/src/main/java/org/example/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.CombatTest.decreaseHealthTest.executor": "Run",
+    "Gradle.CombatTest.increaseHealthTest.executor": "Run",
+    "Gradle.FileLoadingTest.executor": "Run",
+    "Gradle.FileLoadingTest.printAdjacentLocations.executor": "Run",
+    "Gradle.FileLoadingTest.printConnectionsBetweenLocations.executor": "Run",
+    "Gradle.FileLoadingTest.printHashMaps.executor": "Run",
+    "Gradle.FileLoadingTest.printWorldMap.executor": "Run",
+    "Gradle.FileLoadingTest.test.executor": "Run",
+    "Gradle.MapAndLocationTest.npcPlacingTest.executor": "Run",
+    "Gradle.MapAndLocationTest.playerPositionTest.executor": "Run",
+    "Gradle.RavagedPlanetGradle [:Main.main()].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/xxthe/IdeaProjects/RavagedPlanetGradle/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="Application.Main">
+}]]></component>
+  <component name="RunManager" selected="Gradle.MapAndLocationTest.npcPlacingTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="RavagedPlanetGradle.main" />
@@ -116,6 +121,30 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="CombatTest.increaseHealthTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;CombatTest.increaseHealthTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
     </configuration>
     <configuration name="FileLoadingTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -141,7 +170,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="FileLoadingTest.printAdjacentLocations" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="MapAndLocationTest.npcPlacingTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -154,7 +183,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;FileLoadingTest.printAdjacentLocations&quot;" />
+            <option value="&quot;MapAndLocationTest.npcPlacingTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -165,7 +194,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="FileLoadingTest.printConnectionsBetweenLocations" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="MapAndLocationTest.playerPositionTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -178,31 +207,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;FileLoadingTest.printConnectionsBetweenLocations&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="FileLoadingTest.printWorldMap" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;FileLoadingTest.printWorldMap&quot;" />
+            <option value="&quot;MapAndLocationTest.playerPositionTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -215,11 +220,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.FileLoadingTest" />
+        <item itemvalue="Gradle.MapAndLocationTest.npcPlacingTest" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Gradle.FileLoadingTest.printConnectionsBetweenLocations" />
-        <item itemvalue="Gradle.FileLoadingTest.printAdjacentLocations" />
-        <item itemvalue="Gradle.FileLoadingTest.printWorldMap" />
+        <item itemvalue="Gradle.MapAndLocationTest.playerPositionTest" />
+        <item itemvalue="Gradle.FileLoadingTest" />
+        <item itemvalue="Gradle.CombatTest.increaseHealthTest" />
       </list>
     </recent_temporary>
   </component>
@@ -244,7 +249,10 @@
       <workItem from="1721477049589" duration="5868000" />
       <workItem from="1721483709065" duration="4172000" />
       <workItem from="1721547310736" duration="2247000" />
-      <workItem from="1721557291502" duration="2438000" />
+      <workItem from="1721557291502" duration="3138000" />
+      <workItem from="1721650932107" duration="3757000" />
+      <workItem from="1721718922418" duration="3250000" />
+      <workItem from="1721804637655" duration="5297000" />
     </task>
     <task id="LOCAL-00001" summary="basic mapping">
       <option name="closed" value="true" />
@@ -270,7 +278,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721483154781</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="comments and jagged array handling">
+      <option name="closed" value="true" />
+      <created>1721560524105</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1721560524105</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,7 +295,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="basic mapping" />
     <MESSAGE value="map loading from file" />
-    <option name="LAST_COMMIT_MESSAGE" value="map loading from file" />
+    <MESSAGE value="comments and jagged array handling" />
+    <option name="LAST_COMMIT_MESSAGE" value="comments and jagged array handling" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

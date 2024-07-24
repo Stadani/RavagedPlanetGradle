@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.util.*;
 
 public class WorldMap {
-    private HashMap<Location, List<Location>> worldMap; //room graph
-    private HashMap<String, Location> locationNameMap;
+    private final HashMap<Location, List<Location>> worldMap; //room graph
+    private final HashMap<String, Location> locationNameMap;
 
     public WorldMap() {
         this.worldMap = new HashMap<>();
@@ -92,6 +92,5 @@ public class WorldMap {
             System.out.print("\n");
         }
     }
-
 
 }

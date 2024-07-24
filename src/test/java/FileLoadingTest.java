@@ -40,4 +40,5 @@ public class FileLoadingTest {
         Location location = this.worldMap.getLocationByName("Town");
         this.worldMap.printAdjacentLocations(location);
     }
+
 }

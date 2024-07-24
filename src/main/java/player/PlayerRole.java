@@ -1,10 +1,10 @@
-package org.example;
+package player;
 
 public enum PlayerRole {
-    KNIGHT(5, 0, 5, 0, 5, 5),
-    SORCERER(2, 10, 5, 100, 5, 0),
-    THIEF(5, 0, 10, 0, 0, 10),
-    CLERIC(5, 5, 10, 50, 5, 0);
+    KNIGHT(5, 0, 5, 0, 5, 5, 2),
+    SORCERER(2, 10, 5, 100, 5, 0, 3),
+    THIEF(5, 0, 10, 0, 0, 10, 5),
+    CLERIC(5, 5, 10, 50, 5, 0, 3);
 
     private int attack;
     private int magic;
@@ -12,14 +12,16 @@ public enum PlayerRole {
     private int mana;
     private int defense;
     private int critChance;
+    private int speed;
 
-    PlayerRole(int attack, int magic, int health, int mana, int defense, int critChance) {
+    PlayerRole(int attack, int magic, int health, int mana, int defense, int critChance, int speed) {
         this.attack = attack;
         this.magic = magic;
         this.health = health;
         this.mana = mana;
         this.defense = defense;
         this.critChance = critChance;
+        this.speed = speed;
     }
 
     public int getAttack() {
@@ -68,5 +70,13 @@ public enum PlayerRole {
 
     public void setCritChance(int critChance) {
         this.critChance = critChance;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
     }
 }
